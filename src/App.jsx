@@ -1,11 +1,18 @@
-import './App.css';
-import { Test } from './components/Test';
+import "./App.css";
+import { Test } from "./pages/Test";
+import { BrowserRouter, Redirect, Route, Routes } from "react-router-dom";
+import { Rank } from "./pages/Rank";
 
 function App() {
   return (
-    <div className="App">
-        <Test></Test>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Test />} />
+          <Route path="/rank" element={<Rank />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
