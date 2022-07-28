@@ -12,7 +12,7 @@ export const Question = (props) => {
   return (
     <div className="questionBox">
       <div className="question">
-        <h1>{props.question ? props.question : "hello"}</h1>
+        <h1>{props.question ? props.question.word : "hello"}</h1>
       </div>
       <form className="answers">
         <FormLabel id="demo-radio-buttons-group-label">Speech part</FormLabel>
@@ -47,10 +47,13 @@ export const Question = (props) => {
             label="adverb"
           />
         </RadioGroup>
+        <div className="submit">
+          <h5>
+            your answer is: 
+          </h5>
+          <Button variant="contained">submit</Button>
+        </div>
       </form>
-      <div className="next">
-        <Button variant="contained">Next</Button>
-      </div>
     </div>
   );
 };
