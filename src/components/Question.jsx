@@ -71,7 +71,6 @@ export const Question = (props) => {
             type="submit"
             variant="outlined"
             className="submit"
-            onClick={() => isSubmitted()}
           >
             Check Answer
           </Button>

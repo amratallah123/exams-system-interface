@@ -4,26 +4,21 @@ import React, { useEffect, useState } from "react";
 import { Question } from "../components/Question";
 import { getWords } from "../services/services";
 import "../styles/test.css";
-// import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { increment } from "../redux/indexSlicer";
 
 export const Test = () => {
   const [words, setWords] = useState([]);
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    fetchWords();
-  }, []);
+  const index = useSelector((state) => state.index.index);
   const fetchWords = async () => {
     const results = await getWords();
-    console.log(words);
     setWords(results.data);
     console.log(words);
   };
-  const handleUpdateIndex = () => {
-    if (index >= 0 && index < 9) {
-      setIndex(index + 1);
-    }
-  };
+  useEffect(() => {
+    fetchWords();
+  }, []);
+
   return (
     <div className="test">
       <div className="progress">
@@ -35,14 +30,7 @@ export const Test = () => {
       </div>
 
       <div className="questions">
-        <Question question={words[index]} isNotSubmit={true}>
-          {" "}
-        </Question>
-        <div className="next">
-          <Button onClick={() => handleUpdateIndex()} variant="contained">
-            Next
-          </Button>
-        </div>
+        <Question question={words}> </Question>
       </div>
     </div>
   );
