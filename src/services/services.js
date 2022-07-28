@@ -1,6 +1,9 @@
 import axios from "axios";
-const apiUrl = "http://localhost:1000/api/";
+const apiUrl = "http://localhost:3000/api/";
 
-export async function getWords() {
-  return await axios.get(apiUrl + "words");
+export function getWords() {
+  return axios.get(apiUrl + "words");
+}
+export function postScoreAndGetRank(score) {
+  return axios.post(apiUrl + "rank", { score });
 }

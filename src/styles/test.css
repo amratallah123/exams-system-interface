@@ -19,6 +19,13 @@ justify-content: center;
     border-radius: 10px;
     margin-top: 23px;
 }
+.next{
+    text-align: center;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin: 10px;
+}
 
 @media screen and (max-width: 800px) {
     .line{
