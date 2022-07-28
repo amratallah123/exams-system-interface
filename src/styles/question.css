@@ -1,0 +1,25 @@
+.questionBox{
+    height: 400px;
+    width: 700px;
+    background-color: #fafafa;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px -2px gray;
+    padding: 50px;
+}
+.question{
+    text-align: center;
+}
+.answer{
+    padding-left: 50px;
+}
+
+.next{
+    text-align: center;
+}
+@media screen and (max-width: 800px) {
+    .questionBox{
+        height: 300px;
+        width: 300px;
+    }
+  }
