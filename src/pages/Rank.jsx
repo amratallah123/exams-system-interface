@@ -7,7 +7,7 @@ export const Rank = () => {
   const [rank, setRank] = useState(0);
   useEffect(() => {
     getRank();
-  });
+  }, []);
   const getRank = async () => {
     const results = await postScoreAndGetRank(90);
     console.log(rank);

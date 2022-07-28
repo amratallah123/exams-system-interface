@@ -14,12 +14,13 @@
     padding-left: 50px;
 }
 
+
 .submit{
     text-align: center;
 }
 @media screen and (max-width: 800px) {
     .questionBox{
-        height: 300px;
+        height: 400px;
         width: 300px;
     }
   }

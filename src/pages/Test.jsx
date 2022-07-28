@@ -27,11 +27,17 @@ export const Test = () => {
   return (
     <div className="test">
       <div className="progress">
-        <LinearProgress className="line" variant="determinate" value={10} />
+        <LinearProgress
+          className="line"
+          variant="determinate"
+          value={index * 10}
+        />
       </div>
 
       <div className="questions">
-        <Question question={words[index]}> </Question>
+        <Question question={words[index]} isNotSubmit={true}>
+          {" "}
+        </Question>
         <div className="next">
           <Button onClick={() => handleUpdateIndex()} variant="contained">
             Next
