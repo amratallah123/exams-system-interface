@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import { postScoreAndGetRank } from "../services/services";
 import { useSelector } from "react-redux";
 
@@ -9,6 +9,7 @@ export const Rank = () => {
   const [rank, setRank] = useState(0);
   const score = useSelector((state) => state.score.score);
 
+  // fetching the rank
   const getRank = async () => {
     const results = await postScoreAndGetRank(score);
     console.log(rank);
