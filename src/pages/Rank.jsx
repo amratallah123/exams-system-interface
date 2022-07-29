@@ -25,11 +25,7 @@ export const Rank = () => {
     <div className="rankBox">
       <h1 className="rank"> {rank.rank}</h1>
       <h2>Your rank</h2>
-      <h4>
-        {rank.rank >= 40
-          ? "WOW, Congratulations!"
-          : "Oh, sorry do all yor best"}
-      </h4>
+      <h4>{rank.rank >= 40 ? "Well done !" : "Try harder"}</h4>
 
       <a href="/">
         <Button
