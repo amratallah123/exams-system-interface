@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Question } from "../components/Question";
 import { getWords } from "../services/services";
 import "../styles/test.css";
-import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../redux/indexSlicer";
+import { useSelector } from "react-redux";
 
 export const Test = () => {
   const [words, setWords] = useState([]);

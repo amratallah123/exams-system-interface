@@ -2,6 +2,7 @@
 .rankBox{
     height: 400px;
     width: 700px;
+    color: #fafafa;
     background-color: #fafafa;
     margin-top: 30px;
     border-radius: 10px;
@@ -11,4 +12,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: linear-gradient(to right, #2b5876, #4e4376);
 }
+
+@media screen and (max-width: 800px) {
+    .rankBox{
+        height: 400px;
+        width: 300px;
+    }
+  }

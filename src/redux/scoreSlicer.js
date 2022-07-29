@@ -12,7 +12,7 @@ export const scoreSlice = createSlice({
       state.score += 10;
     },
     clearScore: (state) => {
-      state.index = 0;
+      state.score = 0;
     },
   },
 });

@@ -13,6 +13,7 @@ import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementIndex, clearIndex } from "../redux/indexSlicer";
 import { incrementScore, clearScore } from "../redux/scoreSlicer";
+import { Link } from "react-router-dom";
 
 export const Question = (props) => {
   const [value, setValue] = useState("");
@@ -30,21 +31,20 @@ export const Question = (props) => {
     setError(false);
   };
 
-  const handleUpdateIndex = () => {
-    if (index >= 0 && index <= 9) {
+  const handleSubmit = (event) => {
+    const currentInedex = index;
+    if (currentInedex >= 0 && currentInedex <= 9 && props.question[index]) {
       dispatch(incrementIndex());
     } else {
+      dispatch(clearIndex());
+      dispatch(clearScore());
     }
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (value === props.question[index].pos) {
+    if (value === props.question[currentInedex]?.pos) {
       setHelperText("You got it!");
       dispatch(incrementScore());
       setValue("");
-
+      console.log(props.question[currentInedex]?.pos);
       setError(false);
     } else if (value === "") {
       setHelperText("Please select an option.");
@@ -60,48 +60,57 @@ export const Question = (props) => {
     <div className="container">
       <div className="questionBox">
         <div className="question">
-          <h1>
-            {props.question[index] ? props.question[index].word : "hello"}
-          </h1>
+          <h1>{props.question[index] ? props.question[index]?.word : ""}</h1>
         </div>
-        <form onSubmit={handleSubmit}>
-          <FormControl sx={{ m: 3 }} error={error} variant="standard">
-            <FormLabel id="demo-error-radios">
-              Speech part quiz:{" "}
-              {props.question[index] ? props.question[index].word : "hello"}
-            </FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-error-radios"
-              name="quiz"
-              value={value}
-              onChange={handleRadioChange}
-            >
-              <FormControlLabel value="noun" control={<Radio />} label="noun" />
-              <FormControlLabel value="verb" control={<Radio />} label="verb" />
-              <FormControlLabel
-                value="adverb"
-                control={<Radio />}
-                label="adverb"
-              />
-              <FormControlLabel
-                value="adjective"
-                control={<Radio />}
-                label="adjective"
-              />
-            </RadioGroup>
-            <FormHelperText>{helperText}</FormHelperText>
-            <FormHelperText>{score}</FormHelperText>
+        <FormControl sx={{ m: 3 }} error={error} variant="standard">
+          <FormLabel id="demo-error-radios">
+            Speech part quiz:{" "}
+            {props.question[index] ? props.question[index]?.word : ""}
+          </FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-error-radios"
+            name="quiz"
+            value={value}
+            onChange={handleRadioChange}
+          >
+            <FormControlLabel value="noun" control={<Radio />} label="noun" />
+            <FormControlLabel value="verb" control={<Radio />} label="verb" />
+            <FormControlLabel
+              value="adverb"
+              control={<Radio />}
+              label="adverb"
+            />
+            <FormControlLabel
+              value="adjective"
+              control={<Radio />}
+              label="adjective"
+            />
+          </RadioGroup>
+          <FormHelperText>{helperText}</FormHelperText>
+          <FormHelperText>{score}</FormHelperText>
+        </FormControl>
+      </div>
+      <div className="submitBox">
+        {index <= 9 ? (
+          <Button
+            variant="outlined"
+            sx={{ color: "#fff", borderColor: "#fff" }}
+            className="submit"
+            onClick={() => handleSubmit()}
+          >
+            Check Answer
+          </Button>
+        ) : (
+          <Link to="/rank">
             <Button
-              sx={{ mt: 1, mr: 1 }}
-              type="submit"
-              variant="outlined"
+              variant="contained"
+              sx={{ color: "#fff", bgcolor: "#076585" }}
               className="submit"
-              onClick={() => handleUpdateIndex()}
             >
-              Check Answer
+              Submit
             </Button>
-          </FormControl>
-        </form>
+          </Link>
+        )}
       </div>
     </div>
   );
