@@ -60,13 +60,13 @@ export const Question = (props) => {
     <div className="container">
       <div className="questionBox">
         <div className="question">
-          <h1>{props.question[index] ? props.question[index]?.word : ""}</h1>
+          <h2>
+            The Word is :{" "}
+            {props.question[index] ? props.question[index]?.word : ""}
+          </h2>
         </div>
         <FormControl sx={{ m: 3 }} error={error} variant="standard">
-          <FormLabel id="demo-error-radios">
-            Speech part quiz:{" "}
-            {props.question[index] ? props.question[index]?.word : ""}
-          </FormLabel>
+          <FormLabel id="demo-error-radios">Speech part quiz: ... </FormLabel>
           <RadioGroup
             aria-labelledby="demo-error-radios"
             name="quiz"
@@ -87,7 +87,7 @@ export const Question = (props) => {
             />
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
-          <FormHelperText>{score}</FormHelperText>
+          <h3>your score {score}</h3>
         </FormControl>
       </div>
       <div className="submitBox">
