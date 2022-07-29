@@ -22,7 +22,8 @@ export const Rank = () => {
 
   return (
     <div className="rankBox">
-      <h1>Your rank: {rank.rank}</h1>
+      <h1 className="rank"> {rank.rank}</h1>
+      <h2>Your rank</h2>
       <h4>
         {rank.rank >= 40
           ? "WOW, Congratulations!"

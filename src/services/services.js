@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiUrl = "http://localhost:3000/api/";
+const apiUrl = "http://localhost:1000/api/";
 
 export function getWords() {
   return axios.get(apiUrl + "words");

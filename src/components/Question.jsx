@@ -66,7 +66,7 @@ export const Question = (props) => {
           </h2>
         </div>
         <FormControl sx={{ m: 3 }} error={error} variant="standard">
-          <FormLabel id="demo-error-radios">Speech part quiz: ... </FormLabel>
+          <FormLabel id="demo-error-radios">Speech part: ... </FormLabel>
           <RadioGroup
             aria-labelledby="demo-error-radios"
             name="quiz"
