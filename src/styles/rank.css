@@ -1,27 +1,26 @@
-
-.rankBox{
-    height: 400px;
-    width: 700px;
-    color: #fafafa;
-    background-color: #fafafa;
-    margin-top: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 5px -2px gray;
-    padding: 50px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: linear-gradient(to right, #2b5876, #4e4376);
+.rankBox {
+  height: 400px;
+  width: 700px;
+  color: #fafafa;
+  background-color: #fafafa;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 5px -2px gray;
+  padding: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to right, #2b5876, #4e4376);
 }
-.rank{
-    font-size: 80px;
-    margin: 10px;
+.rank {
+  font-size: 80px;
+  margin: 10px;
 }
 
 @media screen and (max-width: 800px) {
-    .rankBox{
-        height: 400px;
-        width: 300px;
-    }
+  .rankBox {
+    height: 400px;
+    width: 240px;
   }
+}
