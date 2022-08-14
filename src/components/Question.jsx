@@ -70,7 +70,9 @@ export const Question = (props) => {
           <h1> {props.question[index] ? props.question[index]?.word : ""}</h1>
         </div>
         <FormControl sx={{ m: 3 }} error={error} variant="standard">
-          <FormLabel id="demo-error-radios">Part of speech: ... </FormLabel>
+          <FormLabel id="demo-error-radios">
+            {index + 1} : Part of speech: ...{" "}
+          </FormLabel>
           <RadioGroup
             aria-labelledby="demo-error-radios"
             name="quiz"

@@ -25,8 +25,11 @@ export const Rank = () => {
     <div className="rankBox">
       <h1 className="rank"> {rank.rank}</h1>
       <h2>Your rank</h2>
-      <h4>{rank.rank >= 40 ? "Well done !" : "Try harder"}</h4>
-
+      {rank.rank >= 40 ? (
+        <h4>Well done &#128079;! </h4>
+      ) : (
+        <h4> Try harder &#128531; </h4>
+      )}
       <a href="/">
         <Button
           sx={{ bgcolor: "#076585", fontWeight: "light" }}
