@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiUrl = "https://exams-application-server.herokuapp.com/api/";
+const apiUrl = "http://localhost:1000/api/";
 
 export function getWords() {
   return axios.get(apiUrl + "words");
